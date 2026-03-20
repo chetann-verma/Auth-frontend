@@ -9,10 +9,16 @@ export default defineConfig({
     minify: 'terser',
     rollupOptions: {
       output: {
-        manualChunks: {
-          'react-vendor': ['react', 'react-dom'],
-          'router-vendor': ['react-router-dom'],
-          'axios-vendor': ['axios'],
+        manualChunks: (id) => {
+          if (id.includes('node_modules/react') || id.includes('node_modules/react-dom')) {
+            return 'react-vendor'
+          }
+          if (id.includes('node_modules/react-router-dom')) {
+            return 'router-vendor'
+          }
+          if (id.includes('node_modules/axios')) {
+            return 'axios-vendor'
+          }
         },
       },
     },
