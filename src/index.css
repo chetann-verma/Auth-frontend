@@ -1,0 +1,14 @@
+:root {
+  --bg-main: #0f172a;
+  --bg-card: rgba(255, 255, 255, 0.05);
+  --accent: #7c3aed;
+  --text-main: #e5e7eb;
+  --text-secondary: #9ca3af;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: radial-gradient(circle at top, #1e1b4b, #020617);
+  color: var(--text-main);
+}
